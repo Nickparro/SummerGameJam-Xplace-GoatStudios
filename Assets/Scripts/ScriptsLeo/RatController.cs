@@ -31,10 +31,9 @@ public class RatController : MonoBehaviour
         MoveRat();
         Jump();
         isGrounded = Physics.CheckSphere(transform.position + groundCheckOffset, groundCheckRadius, groundLayer);
-
         animator.SetFloat("HorizontalSpeed", Mathf.Abs(theRB.velocity.x));
+        animator.SetBool("IsGrounded", isGrounded);
 
-        
     }
 
     
