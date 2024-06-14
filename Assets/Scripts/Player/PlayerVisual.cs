@@ -16,6 +16,7 @@ public class PlayerVisual : MonoBehaviour
     }
 
     public void SetCrouching(bool isCrouching) => _playerAnimator.SetBool("Crouching", isCrouching);
+    public void Play(string clipName) => _playerAnimator.Play(clipName);
 
     private float MapValue(float value, float originalMin, float originalMax, float newMin, float newMax, bool clamp)
     {

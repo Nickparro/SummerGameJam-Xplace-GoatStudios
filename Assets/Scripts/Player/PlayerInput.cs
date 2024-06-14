@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
     private PlayerInputs _playerInputs;
+
     private InputAction _moveAction;
     private InputAction _crouchAction;
+    private InputAction _interactAction;
 
     private float _xInput;
     private bool _isCrouching;
@@ -13,15 +16,20 @@ public class PlayerInput : MonoBehaviour
     public float XInput => _xInput;
     public bool IsCrouching => _isCrouching;
 
+    public event Action OnInteraction;
+
     private void Start()
     {
         _playerInputs = new();
         _moveAction = _playerInputs.Gameplay.Move;
         _crouchAction = _playerInputs.Gameplay.Crouch;
+        _interactAction = _playerInputs.Gameplay.Interact;
 
         _crouchAction.performed += (x => SetCrouch(true));
         _crouchAction.canceled += (x => SetCrouch(false));
 
+        _interactAction.canceled += x => OnInteraction?.Invoke();
+        
         _playerInputs.Enable();
     }
 
