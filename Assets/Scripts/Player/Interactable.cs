@@ -3,6 +3,7 @@
 public abstract class Interactable : MonoBehaviour
 {
     [SerializeField] protected GameObject _visualCue;
+
     [Header("Collision")]
     [SerializeField] private LayerMask _playerMask = 64;
 
@@ -15,6 +16,7 @@ public abstract class Interactable : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _playerInput = player.GetComponent<PlayerInput>();
         _playerInput.OnInteraction += Interact;
+
         _visualCue.SetActive(false);
     }
 
@@ -36,3 +38,5 @@ public abstract class Interactable : MonoBehaviour
     }
     protected abstract void Interact();
 }
+
+
