@@ -12,8 +12,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerVisual _playerVisual;
 
     [Header("Values")]
-    [SerializeField] private float _acceleration;
     [SerializeField] private float _maxSpeed;
+    [SerializeField] private float _acceleration;
+    [Range(0.1f, 0.9f)]
+    [SerializeField] private float _speedDecay;
     [Range(0.1f, 0.9f)]
     [SerializeField] private float _crouchSpeedFactor;
     [SerializeField] private SphereCollider _crouchDisableCollider;
@@ -43,16 +45,24 @@ public class PlayerController : MonoBehaviour
     {
         _ceilingCheck = Physics.CheckSphere(transform.position + _crouchDisableCollider.center, 
                                             _crouchDisableCollider.radius, _whatIsGround);
-        if(_playerInput.enabled == true)
+        if(_playerInput.enabled == true && DialogManager.Instance.DialogIsPlaying == false)
         {
-            float increment = _playerInput.XInput * _acceleration;
+            if(_playerInput.XInput != 0.0f)
+            {
+                float increment = _playerInput.XInput * _acceleration;
 
-            float newSpeed = _playerRb.velocity.x + increment;
-            newSpeed = Mathf.Clamp(newSpeed, -_maxSpeed, _maxSpeed);
+                float newSpeed = _playerRb.velocity.x + increment;
+                newSpeed = Mathf.Clamp(newSpeed, -_maxSpeed, _maxSpeed);
 
-            float crouchModifier = _crouchDisableCollider.isTrigger ? _crouchSpeedFactor : 1.0f;
-            _playerRb.velocity = new(newSpeed * crouchModifier, _playerRb.velocity.y);
-            SetLookDirection();
+                float crouchModifier = _crouchDisableCollider.isTrigger ? _crouchSpeedFactor : 1.0f;
+                _playerRb.velocity = new(newSpeed * crouchModifier, _playerRb.velocity.y);
+                SetLookDirection();
+            }
+            else
+            {
+                _playerRb.velocity = new(_playerRb.velocity.x * _speedDecay, _playerRb.velocity.y);
+            }
+            
         }
         else
             _playerRb.velocity = Vector3.zero;
