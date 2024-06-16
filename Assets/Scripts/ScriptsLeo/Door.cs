@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : Interactable
+public class Door : MonoBehaviour , IInteractable 
 {
-    [SerializeField] Animator doorAnimator;
+    [SerializeField] private Animator doorAnimator;
+    [SerializeField] private GameObject visualCue;
     private bool isOpen;
+    public GameObject VisualCue => visualCue;
 
-    protected override void Interact()
+    public void Interact()
     {
         isOpen = !isOpen;
         doorAnimator.SetBool("IsOpen", isOpen);
     }
 
+    
 }
+
