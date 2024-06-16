@@ -133,13 +133,13 @@ GameObject:
   - component: {fileID: 80608217}
   - component: {fileID: 80608220}
   - component: {fileID: 80608219}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual Cue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &80608217
 Transform:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 187233426}
   - component: {fileID: 187233425}
   - component: {fileID: 187233427}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Grab Ledge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,9 +273,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualCue: {fileID: 80608216}
-  _playerMask:
-    serializedVersion: 2
-    m_Bits: 64
   _actionType: {fileID: 11400000, guid: 56537c3e70a99824b885093416d21574, type: 2}
   _xDisplacement:
     serializedVersion: 2
@@ -290,17 +287,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.7915803
-      value: 0.6846757
-      inSlope: 2.7537649
-      outSlope: 2.7537649
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.10545024
-      outWeight: 0.4817035
-    - serializedVersion: 3
       time: 1
-      value: 1.5003052
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -316,15 +304,15 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 1.0003974
-      value: 3.004486
+      time: 1
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
