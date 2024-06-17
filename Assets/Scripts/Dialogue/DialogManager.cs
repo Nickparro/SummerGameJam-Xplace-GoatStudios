@@ -4,28 +4,46 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class DialogManager : MonoBehaviour
 {
+    [Header("Parameters")]
+    [SerializeField] private float _typingSpeed = 0.05f;
+
     [Header("Dialog UI")]
     [SerializeField] private GameObject _dialogPanel;
+    [SerializeField] private GameObject _continueIcon;
     [SerializeField] private TMP_Text _dialogText;
     [SerializeField] private TMP_Text _displayNameText;
     [SerializeField] private Animator _portraitAnimator;
-
+    
     [Header("Choices UI")]
     [SerializeField] private GameObject[] _choices;
     private TMP_Text[] _choicesText;
 
+    //Input
+    private PlayerInputs _playerInputs;
+    private InputAction _submitAction;
+    private bool _pressedInput;
+
+    //Dialog flow
     private Story _currentStory;
     private bool _dialogIsPlaying;
+    private bool _canContinueToNextLine;
+    
+    private Coroutine _displayLineCoroutine;
 
+    //Instance
     public static DialogManager Instance;
     public bool DialogIsPlaying => _dialogIsPlaying;
 
+    //Tag management
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
-    private const string STATE_TAG = "changeState";
+
+    //External functions
+    private InkExternalFunctions _externalFunctions;
 
     private void Awake()
     {
@@ -36,6 +54,8 @@ public class DialogManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
+
+        _externalFunctions = new();
     }
 
     private void Start()
@@ -50,13 +70,24 @@ public class DialogManager : MonoBehaviour
             _choicesText[index] = choice.GetComponentInChildren<TMP_Text>();
             index++;
         }
+
+        _playerInputs = new();
+        _submitAction = _playerInputs.UI.Submit;
+        _submitAction.performed += (x => _pressedInput = true);
+        _playerInputs.Enable();
     }
+
+    private void OnEnable() => _playerInputs?.Enable();
+    private void OnDisable() => _playerInputs?.Disable();
 
     private void Update()
     {
         if (_dialogIsPlaying == false) return;
-        if (_currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Space))
+        if (_canContinueToNextLine == true 
+            && _currentStory.currentChoices.Count == 0 
+            && _pressedInput == true)
         {
+            _pressedInput = false;
             ContinueStory();
         }
     }
@@ -67,13 +98,9 @@ public class DialogManager : MonoBehaviour
         _dialogIsPlaying = true;
         _dialogPanel.SetActive(true);
 
+        _externalFunctions.Bind(_currentStory);
+
         ContinueStory();
-    }
-    private void ExitDialogMode()
-    {
-        _dialogIsPlaying = false;
-        _dialogPanel.SetActive(false);
-        _dialogText.text = "";
     }
 
     private void ContinueStory()
@@ -81,9 +108,9 @@ public class DialogManager : MonoBehaviour
         if (_currentStory.canContinue == true)
         {
             //Set dialog text
-            _dialogText.text = _currentStory.Continue();
-            //Display any choices if any
-            DisplayChoices();
+            if (_displayLineCoroutine != null) StopCoroutine(_displayLineCoroutine);
+            _displayLineCoroutine = StartCoroutine(DisplayLine(_currentStory.Continue()));
+            
             //Handle Tags
             HandleTags(_currentStory.currentTags);
         }
@@ -92,6 +119,49 @@ public class DialogManager : MonoBehaviour
             ExitDialogMode();
         }
     }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        //Empty current dialog text
+        _dialogText.text = "";
+
+        //Hide continue icon and choice buttons if shown
+        _continueIcon.SetActive(false);
+        foreach (GameObject choiceButton in _choices) choiceButton.SetActive(false);
+
+        _canContinueToNextLine = false;
+
+        //Loop through each character
+        foreach (char letter in line.ToCharArray())
+        {
+            //If player presses submit, finish typing full text
+            if(_pressedInput == true)
+            {
+                _pressedInput = false;
+                _dialogText.text = line;
+                break;
+            }
+            _dialogText.text += letter;
+            yield return new WaitForSeconds(_typingSpeed);
+        }
+
+        _continueIcon.SetActive(true);
+        //Display choices if any
+        DisplayChoices();
+
+        _canContinueToNextLine = true;
+    }
+
+    private void ExitDialogMode()
+    {
+        _externalFunctions.Unbind(_currentStory);
+
+        _dialogIsPlaying = false;
+        _dialogPanel.SetActive(false);
+        _dialogText.text = "";
+    }
+
+    
 
     private void HandleTags(List<string> currentTags)
     {
@@ -111,9 +181,6 @@ public class DialogManager : MonoBehaviour
                     break;
                 case PORTRAIT_TAG:
                     _portraitAnimator.Play(tagValue);
-                    break;
-                case STATE_TAG:
-                    //StateManager.SetState(tagValue);
                     break;
             }
         }
@@ -154,7 +221,11 @@ public class DialogManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        _currentStory.ChooseChoiceIndex(choiceIndex);
-        ContinueStory();
+        if(_canContinueToNextLine == true)
+        {
+            _pressedInput = false;
+            _currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
+        }
     }
 }
