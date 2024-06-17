@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class DialogManager : MonoBehaviour
 {
     [Header("Parameters")]
+    [SerializeField] private TextAsset _defaultDialog;
     [SerializeField] private float _typingSpeed = 0.05f;
 
     [Header("Dialog UI")]
@@ -94,7 +95,10 @@ public class DialogManager : MonoBehaviour
 
     public void EnterDialogMode(TextAsset inkJson)
     {
-        _currentStory = new(inkJson.text);
+        if(inkJson == null)
+            _currentStory = new(_defaultDialog.text);
+        else
+            _currentStory = new(inkJson.text);
         _dialogIsPlaying = true;
         _dialogPanel.SetActive(true);
 

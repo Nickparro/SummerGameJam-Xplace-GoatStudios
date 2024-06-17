@@ -4,9 +4,11 @@ using UnityEngine;
 public class StateManager : MonoBehaviour
 {
     [SerializeField] private State _initialState;
+    [SerializeField] private StateEvent _onStateChanged;
     public static StateManager Instance;
 
     private State _currentState;
+    public State CurrentState => _currentState;
 
     private void Awake()
     {
@@ -22,13 +24,12 @@ public class StateManager : MonoBehaviour
 
     public void ChangeState(string newState)
     {
-        _currentState = _currentState.PossibleStates.Where(t => t.Name == newState).First();
+        State endState = _currentState.PossibleStates.Where(t => t.Name == newState).First();
+        if (endState != null)
+        {
+            _currentState = endState;
+            _onStateChanged.Invoke(_currentState);
+        }
+        else Debug.LogError("State " + newState + " not found!");
     }
-}
-
-public class State : ScriptableObject
-{
-    public string Name;
-    public State[] PossibleStates;
-
 }

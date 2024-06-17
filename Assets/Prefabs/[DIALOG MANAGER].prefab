@@ -1213,6 +1213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3182d7905c1208840a82d4c95f87c606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultDialog: {fileID: 4900000, guid: 8e67fcd9637499b4c90c60d668256d47, type: 3}
   _typingSpeed: 0.05
   _dialogPanel: {fileID: 5578271222151820937}
   _continueIcon: {fileID: 2467668157612142766}
