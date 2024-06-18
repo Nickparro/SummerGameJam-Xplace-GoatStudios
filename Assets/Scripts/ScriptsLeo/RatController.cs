@@ -6,7 +6,7 @@ public class RatController : MonoBehaviour
 {
     [Header("Movimiento")]
     [SerializeField] float moveSpeed;
-    Rigidbody theRB;
+    private Rigidbody theRB;
 
     [SerializeField] bool lookingRight = true;
 
@@ -14,8 +14,7 @@ public class RatController : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] private bool isGrounded;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] float groundCheckRadius = -0.11f;
-    [SerializeField] float additionalGravity = 9.81f;
+    [SerializeField] float groundCheckRadius = 0;
 
     [SerializeField] private Animator animator;
 
@@ -23,20 +22,17 @@ public class RatController : MonoBehaviour
     void Start()
     {
         theRB = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();
-        
+        animator = GetComponent<Animator>();   
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         MoveRat();
         Jump();
         isGrounded = Physics.CheckSphere(transform.position + groundCheckOffset, groundCheckRadius, groundLayer);
         animator.SetFloat("HorizontalSpeed", Mathf.Abs(theRB.velocity.x));
-        animator.SetBool("IsGrounded", isGrounded);
-
-    
+        animator.SetBool("IsGrounded", isGrounded);  
     }
 
     
@@ -66,13 +62,7 @@ public class RatController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-          
             theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
-
-        }
-        else
-        {
-            theRB.velocity += Vector3.up * Physics.gravity.y * additionalGravity * Time.deltaTime;
         }
     }
 
