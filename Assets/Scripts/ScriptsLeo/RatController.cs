@@ -5,65 +5,85 @@ using UnityEngine;
 public class RatController : MonoBehaviour
 {
     [Header("Movimiento")]
-    [SerializeField] float moveSpeed;
-    private Rigidbody theRB;
-
-    [SerializeField] bool lookingRight = true;
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private bool lookingRight = true;
 
     [Header("Salto")]
-    [SerializeField] float jumpForce;
-    [SerializeField] private bool isGrounded;
+    [SerializeField] private float jumpForce;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] float groundCheckRadius = 0;
+    [SerializeField] private float groundCheckRadius = 0.1f;
+    [SerializeField] private Vector3 groundCheckOffset = new Vector3(0, -1, 0);
 
-    [SerializeField] private Animator animator;
+    private Rigidbody ratRigidbody;
+    private Animator ratAnimator;
+    private Transform cameraTransform;
+    private bool isGrounded;
 
-    public Vector3 groundCheckOffset = new Vector3(0, -1, 0);
-    void Start()
+    private void Awake()
     {
-        theRB = GetComponent<Rigidbody>();
-        animator = GetComponent<Animator>();   
+        ratRigidbody = GetComponent<Rigidbody>();
+        ratAnimator = GetComponent<Animator>();
+        cameraTransform = Camera.main.transform;
     }
 
-   
-    void Update()
+    private void Update()
     {
-        MoveRat();
+        isGrounded = CheckGrounded();
+        Move();
         Jump();
-        isGrounded = Physics.CheckSphere(transform.position + groundCheckOffset, groundCheckRadius, groundLayer);
-        animator.SetFloat("HorizontalSpeed", Mathf.Abs(theRB.velocity.x));
-        animator.SetBool("IsGrounded", isGrounded);  
+        UpdateAnimator();
     }
 
-    
-    void MoveRat()
+    private void Move()
     {
-        if (isGrounded)
-        {
-            theRB.velocity = new Vector2(moveSpeed * Input.GetAxis("Horizontal"), theRB.velocity.y);
+        if (!isGrounded) return;
 
-            if (theRB.velocity.x < 0 && lookingRight)
-            {
-                Turn();
-            }
-            else if (theRB.velocity.x > 0 && !lookingRight)
-            {
-                Turn();
-            }
+        Vector3 moveDirection = GetMoveDirection();
+        ratRigidbody.velocity = new Vector2(moveSpeed * moveDirection.x, ratRigidbody.velocity.y);
+
+        if (ShouldTurn(moveDirection.x))
+        {
+            Turn();
         }
     }
+
+    private Vector3 GetMoveDirection()
+    {
+        Vector3 right = cameraTransform.right;
+        right.y = 0;
+        right.Normalize();
+
+        return Input.GetAxis("Horizontal") * right;
+    }
+
+    private bool ShouldTurn(float moveDirectionX)
+    {
+        return (moveDirectionX < 0 && lookingRight) || (moveDirectionX > 0 && !lookingRight);
+    }
+
     private void Turn()
     {
         lookingRight = !lookingRight;
-        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y + 180, 0);
+        transform.Rotate(0, 180, 0);
     }
 
-    void Jump()
+    private void Jump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            theRB.velocity = new Vector2(theRB.velocity.x, jumpForce);
+            ratRigidbody.velocity = new Vector2(ratRigidbody.velocity.x, jumpForce);
         }
+    }
+
+    private bool CheckGrounded()
+    {
+        return Physics.CheckSphere(transform.position + groundCheckOffset, groundCheckRadius, groundLayer);
+    }
+
+    private void UpdateAnimator()
+    {
+        ratAnimator.SetFloat("HorizontalSpeed", Mathf.Abs(ratRigidbody.velocity.x));
+        ratAnimator.SetBool("IsGrounded", isGrounded);
     }
 
     private void OnDrawGizmosSelected()
