@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8886080363335703200}
   - component: {fileID: 8474737491345735977}
   - component: {fileID: 2190568573885827125}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwitchOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2240.028, y: 2240.028, z: 2240.028}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3321897106659872981}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7843301849495509609}
   - component: {fileID: 2223886666611303570}
   - component: {fileID: 2661133841214268039}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Switch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,12 +146,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.3561134, y: 2.8699515, z: 0.85383654}
-  m_Center: {x: 0.025255203, y: 0.090159774, z: -0.2659676}
+  m_Size: {x: 0.1694014, y: 0.2358182, z: 0.24567628}
+  m_Center: {x: 0.0036798716, y: -0.003332287, z: -0.10260522}
 --- !u!114 &2661133841214268039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 8496833935273646482}
   - component: {fileID: 7056167587063298344}
   - component: {fileID: 2687058853074776120}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwitchOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2240.028, y: 2240.028, z: 2240.028}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3321897106659872981}
