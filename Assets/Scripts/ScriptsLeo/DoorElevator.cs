@@ -6,7 +6,7 @@ public class DoorElevator : MonoBehaviour , IInteractable
 {
     [SerializeField] private Animator doorElevatorAnimator;
     [SerializeField] private GameObject visualCue;
-    public bool isOpen;
+    private bool isOpen;
     public GameObject VisualCue => visualCue;
 
     public void Interact()
@@ -15,7 +15,11 @@ public class DoorElevator : MonoBehaviour , IInteractable
         doorElevatorAnimator.SetBool("IsOpen", isOpen);  
     }
 
-    
-    
+    public void SetDoorState(bool state)
+    {       
+        if (isOpen == state) return;
+        isOpen = state;
+        doorElevatorAnimator.SetBool("IsOpen", isOpen);
+    }
 }
 

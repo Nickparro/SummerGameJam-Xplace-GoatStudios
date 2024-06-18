@@ -8,27 +8,22 @@ public class Elevator : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI currentFloorText;
     [SerializeField] private GameObject elevatorUI;
-    [SerializeField] private Button floor1, floor2, floor3, floor4;
-    [SerializeField] private Transform posFloor1, posFloor2, posFloor3, posFloor4;
+    [SerializeField] private Button[] floorButtons;
+    [SerializeField] private Transform[] posFloors;
 
     private int currentFloor = 1; 
     private bool isMoving = false;
     private float moveSpeed = 2f;
 
     
-    [SerializeField] private Animator doorElevatorAnimator;
-    
-    DoorElevator doorElevator;
+    [SerializeField] private DoorElevator doorElevator;
     void Start()
     {
-        
-        doorElevator = GameObject.FindGameObjectWithTag("DoorElevator").GetComponent<DoorElevator>();
-
-        floor1.onClick.AddListener(() => OnFloorSelected(1));
-        floor2.onClick.AddListener(() => OnFloorSelected(2));
-        floor3.onClick.AddListener(() => OnFloorSelected(3));
-        floor4.onClick.AddListener(() => OnFloorSelected(4));
-        
+        for (int i = 0; i < floorButtons.Length; i++)
+        {
+            int j = i;
+            floorButtons[i].onClick.AddListener(() => OnFloorSelected(j));
+        }
         elevatorUI.SetActive(false);
 
         currentFloor = DetermineCurrentFloor();
@@ -38,29 +33,10 @@ public class Elevator : MonoBehaviour
     private int DetermineCurrentFloor()
     {
         float elevatorPosY = transform.position.y;
-
-        if (elevatorPosY == posFloor1.position.y)
+        for (int i = 0; i < posFloors.Length; i++)
         {
-            
-            return 1;
+            if (elevatorPosY == posFloors[i].position.y) return i + 1;
         }
-        else if (elevatorPosY == posFloor2.position.y)
-        {
-            
-            return 2;
-        }
-        else if (elevatorPosY == posFloor3.position.y)
-        {
-            
-            return 3;
-        }
-        else if (elevatorPosY == posFloor4.position.y)
-        {
-            
-            return 4;
-        }
-
-       
         return currentFloor;
     }
 
@@ -68,7 +44,7 @@ public class Elevator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorElevator.Interact();
+            doorElevator.SetDoorState(false);
             elevatorUI.SetActive(true);
             other.transform.SetParent(transform);
         }
@@ -78,7 +54,7 @@ public class Elevator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorElevator.Interact();
+            doorElevator.SetDoorState(false);
             elevatorUI.SetActive(false);
             other.transform.SetParent(null);
         }
@@ -88,66 +64,33 @@ public class Elevator : MonoBehaviour
     {
         if (!isMoving && floorNumber != currentFloor)
         {
-            
-            Vector3 targetPos = Vector3.zero;
-            switch (floorNumber)
-            {
-                case 1:
-                    targetPos = posFloor1.position;
-                    break;
-                case 2:
-                    targetPos = posFloor2.position;
-                    break;
-                case 3:
-                    targetPos = posFloor3.position;
-                    break;
-                case 4:
-                    targetPos = posFloor4.position;
-                    break;
-            }
-
-            
+            Vector3 targetPos = posFloors[floorNumber].position;
             StartCoroutine(MoveElevator(targetPos, floorNumber));
         }
     }
 
-
     private IEnumerator MoveElevator(Vector3 targetPos, int targetFloor)
     {
-        
-        if (doorElevator.isOpen == true) {
-            doorElevator.isOpen = false;
-            doorElevatorAnimator.SetBool("IsOpen", doorElevator.isOpen);
-        }
-       
-        yield return new WaitForSeconds(1f);
-        
         isMoving = true;
-
-        
-        targetPos = new Vector3(transform.position.x, targetPos.y, transform.position.z);
-
+        doorElevator.SetDoorState(false);
+        yield return new WaitForSeconds(1f);  
         
         int direction = (targetPos.y > transform.position.y) ? 1 : -1;
-      
-        
-        while (Mathf.Abs(transform.position.y - targetPos.y) > 0.01f)
+
+        while (Mathf.Abs(transform.position.y - targetPos.y) > 0.05f)
         {
-            transform.Translate(Vector3.up * direction * Time.deltaTime * moveSpeed);
+            transform.Translate(direction * moveSpeed * Time.deltaTime * Vector3.up);
             yield return null;
         }
 
-        
         transform.position = targetPos;
         isMoving = false;
 
-        
         currentFloor = targetFloor;
         
         UpdateCurrentFloorText();
 
-        doorElevator.Interact();
-       
+        doorElevator.SetDoorState(true);
 
     }
 
