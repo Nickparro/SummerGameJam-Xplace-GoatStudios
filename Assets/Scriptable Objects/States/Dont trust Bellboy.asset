@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e0133ace694fd840a3e2b80880cb613, type: 3}
-  m_Name: Initial State
+  m_Name: Dont trust Bellboy
   m_EditorClassIdentifier: 
   PossibleStates:
-  - {fileID: 11400000, guid: 823523aa8931754458347eed72c28201, type: 2}
-  - {fileID: 11400000, guid: bed3f571badd4104db7541567f0ecee2, type: 2}
-  - {fileID: 11400000, guid: 91321c038631cb24ca03a03267a0877b, type: 2}
+  - {fileID: 11400000, guid: e85616c5685c86d43a04fca229aad4d4, type: 2}
+  - {fileID: 11400000, guid: 5052bbc876607f64b85fe04878bb31a1, type: 2}
   Dialogues:
-  - {fileID: 4900000, guid: f01f61e1b2d644c4da538e28a34d10e9, type: 3}
+  - {fileID: 4900000, guid: accd75ad19557fe409ddf122b3bfbdc2, type: 3}

@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0133ace694fd840a3e2b80880cb613, type: 3}
   m_Name: Worker Help
   m_EditorClassIdentifier: 
-  Name: Worker Help
-  PossibleStates: []
-  Dialogues:
-  - {fileID: 4900000, guid: 3e44b39ddf19d7943ad3b5b2d1768cb0, type: 3}
-  - {fileID: 4900000, guid: 5872f8f40242b154d926d1c1d7b92803, type: 3}
-  - {fileID: 4900000, guid: f01f61e1b2d644c4da538e28a34d10e9, type: 3}
+  PossibleStates:
+  - {fileID: 11400000, guid: ad9c97fb7bc85d54292d01749d7df330, type: 2}
+  - {fileID: 11400000, guid: af1ddb4bc8bdf4944b078dc2c9cc8984, type: 2}
+  Dialogues: []
