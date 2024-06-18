@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8619227445018218183}
   - component: {fileID: 4748739689832093872}
   - component: {fileID: 2096168113488137560}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ButtonOff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2000, y: 2000, z: 1000}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2122697810480568679}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 2965028772406407492}
   - component: {fileID: 4100346429940023826}
   - component: {fileID: 8831992322595915454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ButtonOn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2000, y: 2000, z: 1000}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2122697810480568679}
@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 2399146325541305654}
   - component: {fileID: 388262859406714985}
   - component: {fileID: 868414045488799299}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,12 +241,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.5145721, y: 2.0616343, z: 1.4557288}
-  m_Center: {x: 0.05048752, y: 0.17653608, z: -0.15417778}
+  m_Size: {x: 0.22121596, y: 0.2162787, z: 0.3995509}
+  m_Center: {x: 0.00033938885, y: -0.004830107, z: -0.112767816}
 --- !u!114 &868414045488799299
 MonoBehaviour:
   m_ObjectHideFlags: 0
