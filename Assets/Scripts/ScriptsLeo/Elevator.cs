@@ -68,7 +68,7 @@ public class Elevator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorElevator.Interact();
+            
             elevatorUI.SetActive(true);
             other.transform.SetParent(transform);
         }
@@ -78,7 +78,7 @@ public class Elevator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorElevator.Interact();
+           
             elevatorUI.SetActive(false);
             other.transform.SetParent(null);
         }
@@ -114,11 +114,8 @@ public class Elevator : MonoBehaviour
 
     private IEnumerator MoveElevator(Vector3 targetPos, int targetFloor)
     {
-        
-        if (doorElevator.isOpen == true) {
-            doorElevator.isOpen = false;
-            doorElevatorAnimator.SetBool("IsOpen", doorElevator.isOpen);
-        }
+
+        doorElevator.CloseDoor();
        
         yield return new WaitForSeconds(1f);
         
@@ -146,8 +143,7 @@ public class Elevator : MonoBehaviour
         
         UpdateCurrentFloorText();
 
-        doorElevator.Interact();
-       
+        doorElevator.OpenDoor();
 
     }
 
