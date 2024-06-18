@@ -1,79 +1,157 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Elevator : MonoBehaviour
 {
-    [SerializeField] private int totalFloors = 5;
-    [SerializeField] private float distanceBetweenFloors = 3f;
     [SerializeField] private TextMeshProUGUI currentFloorText;
     [SerializeField] private GameObject elevatorUI;
-    [SerializeField] private TMP_Dropdown floorDropdown;
+    [SerializeField] private Button floor1, floor2, floor3, floor4;
+    [SerializeField] private Transform posFloor1, posFloor2, posFloor3, posFloor4;
 
-    private int currentFloor = 0;
+    private int currentFloor = 1; 
     private bool isMoving = false;
-    private Vector3 targetPosition;
+    private float moveSpeed = 2f;
 
+    
+    [SerializeField] private Animator doorElevatorAnimator;
+    
+    DoorElevator doorElevator;
     void Start()
     {
+        
+        doorElevator = GameObject.FindGameObjectWithTag("DoorElevator").GetComponent<DoorElevator>();
+
+        floor1.onClick.AddListener(() => OnFloorSelected(1));
+        floor2.onClick.AddListener(() => OnFloorSelected(2));
+        floor3.onClick.AddListener(() => OnFloorSelected(3));
+        floor4.onClick.AddListener(() => OnFloorSelected(4));
+        
         elevatorUI.SetActive(false);
+
+        currentFloor = DetermineCurrentFloor();
         UpdateCurrentFloorText();
-        PopulateFloorDropdown();
+        
+    }
+
+    private int DetermineCurrentFloor()
+    {
+        float elevatorPosY = transform.position.y;
+
+        if (elevatorPosY == posFloor1.position.y)
+        {
+            
+            return 1;
+        }
+        else if (elevatorPosY == posFloor2.position.y)
+        {
+            
+            return 2;
+        }
+        else if (elevatorPosY == posFloor3.position.y)
+        {
+            
+            return 3;
+        }
+        else if (elevatorPosY == posFloor4.position.y)
+        {
+            
+            return 4;
+        }
+
+       
+        return currentFloor;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "MousePlayer")
+        if (other.CompareTag("Player"))
         {
+            doorElevator.Interact();
             elevatorUI.SetActive(true);
+            other.transform.SetParent(transform);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "MousePlayer")
+        if (other.CompareTag("Player"))
         {
+            doorElevator.Interact();
             elevatorUI.SetActive(false);
+            other.transform.SetParent(null);
         }
     }
 
-    public void OnFloorSelected(int floorIndex)
+    public void OnFloorSelected(int floorNumber)
     {
-        if (!isMoving && floorIndex != currentFloor)
+        if (!isMoving && floorNumber != currentFloor)
         {
-            currentFloor = floorIndex;
-            targetPosition = new Vector3(transform.position.x, floorIndex * distanceBetweenFloors, transform.position.z);
-            StartCoroutine(MoveElevator());
+            
+            Vector3 targetPos = Vector3.zero;
+            switch (floorNumber)
+            {
+                case 1:
+                    targetPos = posFloor1.position;
+                    break;
+                case 2:
+                    targetPos = posFloor2.position;
+                    break;
+                case 3:
+                    targetPos = posFloor3.position;
+                    break;
+                case 4:
+                    targetPos = posFloor4.position;
+                    break;
+            }
+
+            
+            StartCoroutine(MoveElevator(targetPos, floorNumber));
         }
     }
 
-    private IEnumerator MoveElevator()
+    private IEnumerator MoveElevator(Vector3 targetPos, int targetFloor)
     {
+        
+        if (doorElevator.isOpen == true) {
+            doorElevator.isOpen = false;
+            doorElevatorAnimator.SetBool("IsOpen", doorElevator.isOpen);
+        }
+       
+        yield return new WaitForSeconds(1f);
+        
         isMoving = true;
-        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+
+        
+        targetPos = new Vector3(transform.position.x, targetPos.y, transform.position.z);
+
+        
+        int direction = (targetPos.y > transform.position.y) ? 1 : -1;
+      
+        
+        while (Mathf.Abs(transform.position.y - targetPos.y) > 0.01f)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime * 2f);
+            transform.Translate(Vector3.up * direction * Time.deltaTime * moveSpeed);
             yield return null;
         }
-        transform.position = targetPosition;
+
+        
+        transform.position = targetPos;
         isMoving = false;
+
+        
+        currentFloor = targetFloor;
+        
         UpdateCurrentFloorText();
+
+        doorElevator.Interact();
+       
+
     }
 
     private void UpdateCurrentFloorText()
     {
-        currentFloorText.text = "Current Floor: " + (currentFloor + 1);
-    }
-
-    private void PopulateFloorDropdown()
-    {
-        floorDropdown.options.Clear();
-        for (int i = 0; i < totalFloors; i++)
-        {
-            floorDropdown.options.Add(new TMP_Dropdown.OptionData("Floor " + (i+1) ));
-        }
-        floorDropdown.onValueChanged.AddListener(OnFloorSelected);
+        currentFloorText.text = "Current Floor: " + DetermineCurrentFloor();
     }
 }
