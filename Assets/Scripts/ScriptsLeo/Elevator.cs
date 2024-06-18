@@ -19,13 +19,11 @@ public class Elevator : MonoBehaviour
     [SerializeField] private DoorElevator doorElevator;
     void Start()
     {
-        int i = 0;
-        foreach (Button button in floorButtons)
+        for (int i = 0; i < floorButtons.Length; i++)
         {
-            button.onClick.AddListener(() => OnFloorSelected(i));
-            i++;
+            int j = i;
+            floorButtons[i].onClick.AddListener(() => OnFloorSelected(j));
         }
-
         elevatorUI.SetActive(false);
 
         currentFloor = DetermineCurrentFloor();
@@ -66,7 +64,6 @@ public class Elevator : MonoBehaviour
     {
         if (!isMoving && floorNumber != currentFloor)
         {
-            Debug.Log(floorNumber);
             Vector3 targetPos = posFloors[floorNumber].position;
             StartCoroutine(MoveElevator(targetPos, floorNumber));
         }
