@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 {
     //Intro
     public GameObject mainCamera;
-    public CanvasGroup startMenuText, pressAnyButtonText, mainMenuText;
+    public CanvasGroup startMenuText, pressAnyButtonText, mainMenuText, blackFade;
     bool MainMenuScene(string sceneLoaded)
     {
         return SceneManager.GetActiveScene().name == sceneLoaded;
@@ -23,7 +23,9 @@ public class UIManager : MonoBehaviour
             startMenuText.alpha = 0;
             pressAnyButtonText.alpha = 0;
             mainMenuText.alpha = 0;
+            blackFade.alpha = 0;
         }
+            
     }
 
     private void Update() {
@@ -42,6 +44,17 @@ public class UIManager : MonoBehaviour
         sequence.Insert(9f, pressAnyButtonText.DOFade(1f, 0.7f).SetLoops(-1, LoopType.Yoyo));
     }
 
+     public void LoadNewScene()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Insert(0f, blackFade.DOFade(1f, 1.5f));
+        sequence.InsertCallback(1.5f, () => SceneManager.LoadScene("MainLevel"));
+    }
+
+     public void QuitGame()
+    {
+        Application.Quit();
+    }
     public void AnyButtonToStartPressed()
     {
         var sequence = DOTween.Sequence();
