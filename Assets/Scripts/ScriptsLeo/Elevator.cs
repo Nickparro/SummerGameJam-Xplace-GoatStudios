@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,7 +33,6 @@ public class Elevator : MonoBehaviour
 
         currentFloor = DetermineCurrentFloor();
         UpdateCurrentFloorText();
-        
     }
 
     private int DetermineCurrentFloor()
@@ -110,6 +110,7 @@ public class Elevator : MonoBehaviour
             StartCoroutine(MoveElevator(targetPos, floorNumber));
         }
     }
+
 
     private IEnumerator MoveElevator(Vector3 targetPos, int targetFloor)
     {
