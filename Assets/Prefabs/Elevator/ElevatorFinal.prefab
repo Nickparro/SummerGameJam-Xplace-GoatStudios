@@ -2707,8 +2707,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0019155, y: 0.43514156, z: 1.7793944}
-  m_Center: {x: 0.004201174, y: 0.17884302, z: 0.09232485}
+  m_Size: {x: 2.3, y: 0.45, z: 1.75}
+  m_Center: {x: 0, y: 0.15, z: 0.1}
 --- !u!114 &8794108021058492432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2723,15 +2723,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentFloorText: {fileID: 3331273663500875652}
   elevatorUI: {fileID: 7074219806747328816}
-  floor1: {fileID: 8495691139368842791}
-  floor2: {fileID: 4436401393712765580}
-  floor3: {fileID: 1552911527946233020}
-  floor4: {fileID: 2021837268793494506}
-  posFloor1: {fileID: 6029867826044514327}
-  posFloor2: {fileID: 4984965930165165683}
-  posFloor3: {fileID: 2310607193986929198}
-  posFloor4: {fileID: 5890396674627902415}
-  doorElevatorAnimator: {fileID: 7119916091592408280}
+  floorButtons:
+  - {fileID: 8495691139368842791}
+  - {fileID: 4436401393712765580}
+  - {fileID: 1552911527946233020}
+  - {fileID: 2021837268793494506}
+  posFloors:
+  - {fileID: 6029867826044514327}
+  - {fileID: 4984965930165165683}
+  - {fileID: 2310607193986929198}
+  - {fileID: 5890396674627902415}
+  doorElevator: {fileID: 3306409146324128840}
 --- !u!1 &7507031964974170938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3052,7 +3054,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorElevatorAnimator: {fileID: 7119916091592408280}
   visualCue: {fileID: 167255452375805225}
-  isOpen: 0
 --- !u!1 &8324994329851706718
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,25 +12,13 @@ public class DoorElevator : MonoBehaviour , IInteractable
     public void Interact()
     {
         isOpen = !isOpen;
-        Debug.Log("Door is open?: " + isOpen);
         doorElevatorAnimator.SetBool("IsOpen", isOpen);  
-    }  
-
-    public void OpenDoor()
-    {
-        Debug.Log("Isopen: " + isOpen);        
-        if (isOpen == true) return;
-        Debug.Log("OpenDoor");
-        isOpen = true;
-        doorElevatorAnimator.SetBool("IsOpen", isOpen);
     }
 
-    public void CloseDoor()
-    {
-        Debug.Log("Isopen: " + isOpen);
-        //if (isOpen == false) return;
-        Debug.Log("CloseDoor");
-        isOpen = false;      
+    public void SetDoorState(bool state)
+    {       
+        if (isOpen == state) return;
+        isOpen = state;
         doorElevatorAnimator.SetBool("IsOpen", isOpen);
     }
 }
