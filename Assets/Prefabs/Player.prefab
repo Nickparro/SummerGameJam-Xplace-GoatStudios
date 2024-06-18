@@ -446,7 +446,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!136 &2115701469242133111
 CapsuleCollider:
@@ -467,7 +467,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_Height: 1.3
   m_Direction: 1
   m_Center: {x: 0, y: -0.28, z: 0}
@@ -496,7 +496,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!114 &352354157350863460
 MonoBehaviour:
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 352354157350863460}
   _playerVisual: {fileID: 3481900500060715913}
-  _maxSpeed: 2
+  _maxSpeed: 3
   _acceleration: 1
   _speedDecay: 0.75
   _crouchSpeedFactor: 0.6
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerInput: {fileID: 352354157350863460}
   _interactCenter: {fileID: 8700704799356681355}
-  _interactSize: {x: 1, y: 1, z: 1.5}
+  _interactSize: {x: 0.5, y: 1, z: 1.5}
   _interactableLayer:
     serializedVersion: 2
     m_Bits: 256

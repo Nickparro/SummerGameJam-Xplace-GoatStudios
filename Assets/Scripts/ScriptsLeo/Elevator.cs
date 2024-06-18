@@ -11,7 +11,7 @@ public class Elevator : MonoBehaviour
     [SerializeField] private Button[] floorButtons;
     [SerializeField] private Transform[] posFloors;
 
-    private int currentFloor = 1; 
+    private int currentFloor = 2; 
     private bool isMoving = false;
     private float moveSpeed = 2f;
 
@@ -26,7 +26,7 @@ public class Elevator : MonoBehaviour
         }
         elevatorUI.SetActive(false);
 
-        currentFloor = DetermineCurrentFloor();
+        transform.position = new(transform.position.x, posFloors[currentFloor].position.y, transform.position.z);
         UpdateCurrentFloorText();
     }
 

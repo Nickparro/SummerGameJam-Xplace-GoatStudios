@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualCue: {fileID: 1980958525214873093}
-  _inkJson: {fileID: 4900000, guid: a871e6ba9b574044fb09638aab343239, type: 3}
+  _entity: {fileID: 11400000, guid: 1e010e28d67f5794baccd41b5e1d2844, type: 2}
 --- !u!1 &4939158688314598708
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualCue: {fileID: 8864693688054883436}
-  _inkJson: {fileID: 4900000, guid: a871e6ba9b574044fb09638aab343239, type: 3}
+  _entity: {fileID: 11400000, guid: e66545ea05393004ba7c001ac82d04f2, type: 2}
 --- !u!1 &6138793343578405496
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualCue: {fileID: 3320680380814212007}
-  _inkJson: {fileID: 4900000, guid: a871e6ba9b574044fb09638aab343239, type: 3}
+  _entity: {fileID: 11400000, guid: 1e010e28d67f5794baccd41b5e1d2844, type: 2}
 --- !u!1 &6249385659650526861
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualCue: {fileID: 5788445713628867100}
-  _inkJson: {fileID: 4900000, guid: a871e6ba9b574044fb09638aab343239, type: 3}
+  _entity: {fileID: 11400000, guid: a25c39a55bee6cb4e8c3c59245421b8c, type: 2}
 --- !u!1 &6493574330927428757
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualCue: {fileID: 2222938108769161797}
-  _inkJson: {fileID: 4900000, guid: a871e6ba9b574044fb09638aab343239, type: 3}
+  _entity: {fileID: 11400000, guid: 98d632b7b99acf349988c0bfe95e2d2b, type: 2}
 --- !u!1 &7849307816360731968
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualCue: {fileID: 5734177367584745338}
-  _inkJson: {fileID: 4900000, guid: a871e6ba9b574044fb09638aab343239, type: 3}
+  _entity: {fileID: 11400000, guid: 08c8a4f08f4e6e64aaa39bfa7b9e9d4a, type: 2}
 --- !u!1 &8868204278130655890
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _visualCue: {fileID: 6176510142719351928}
-  _inkJson: {fileID: 4900000, guid: a871e6ba9b574044fb09638aab343239, type: 3}
+  _entity: {fileID: 11400000, guid: 1e010e28d67f5794baccd41b5e1d2844, type: 2}
 --- !u!1001 &495063163021248160
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -71,9 +71,9 @@ public class PlayerController : MonoBehaviour
     private void SetLookDirection()
     {
         if (_playerRb.velocity.x > 0.1f)
-            transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            _playerVisual.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
         else if (_playerRb.velocity.x < -0.1f)
-            transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+            _playerVisual.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
     }
 
     public void Interact(ActionType action, AnimationCurve xDisplacement, AnimationCurve yDisplacement, bool facesRight)

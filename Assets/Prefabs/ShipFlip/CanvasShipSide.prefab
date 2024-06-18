@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 4188847143979208232}
   - component: {fileID: 316587063638079172}
   - component: {fileID: 8684693382135287976}
-  - component: {fileID: 4101428463141762363}
   m_Layer: 5
   m_Name: CanvasShipSide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2567763720896079116
 RectTransform:
   m_ObjectHideFlags: 0
@@ -104,22 +103,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &4101428463141762363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2472320351611659593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e710c108290f3cd4ea70c8992d56547f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  fade: {fileID: 8778243766555712328}
-  virtualCamera: {fileID: 0}
-  inWest: 0
 --- !u!1 &3505544648154594724
 GameObject:
   m_ObjectHideFlags: 0

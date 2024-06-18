@@ -12,6 +12,7 @@ public class PlayerInput : MonoBehaviour
 
     private float _xInput;
     private bool _isCrouching;
+    private bool _isInverted;
 
     public float XInput => _xInput;
     public bool IsCrouching => _isCrouching;
@@ -36,8 +37,16 @@ public class PlayerInput : MonoBehaviour
     private void OnEnable() => _playerInputs?.Enable();
     private void OnDisable() => _playerInputs?.Disable();
 
-    private void Update() => _xInput = _moveAction.ReadValue<float>();
+    private void Update()
+    {
+        if(_isInverted == false)
+            _xInput = _moveAction.ReadValue<float>();
+        else
+            _xInput = -_moveAction.ReadValue<float>();
+    }
 
     private void SetCrouch(bool state) => _isCrouching = state;
+
+    public void InvertMovement() => _isInverted = !_isInverted;
 
 }
