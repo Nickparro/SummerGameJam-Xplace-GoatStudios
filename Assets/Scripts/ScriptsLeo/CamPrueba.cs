@@ -7,7 +7,7 @@ public class CamPrueba : MonoBehaviour
     [SerializeField] private float smoothSpeed = 0.125f;  
     void Start()
     {
-        mouseTransform = GameObject.Find("MousePlayer").GetComponent<Transform>();
+        mouseTransform = GameObject.Find("Player").GetComponent<Transform>();
     }
     void FixedUpdate()
     {
