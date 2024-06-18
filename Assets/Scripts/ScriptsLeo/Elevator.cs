@@ -33,7 +33,6 @@ public class Elevator : MonoBehaviour
 
         currentFloor = DetermineCurrentFloor();
         UpdateCurrentFloorText();
-        StartCoroutine(MoveElevator(posFloor3.transform.position, 3));
     }
 
     private int DetermineCurrentFloor()
