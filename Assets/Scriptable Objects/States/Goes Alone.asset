@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e0133ace694fd840a3e2b80880cb613, type: 3}
-  m_Name: Initial State
+  m_Name: Goes Alone
   m_EditorClassIdentifier: 
-  PossibleStates:
-  - {fileID: 11400000, guid: 823523aa8931754458347eed72c28201, type: 2}
-  - {fileID: 11400000, guid: bed3f571badd4104db7541567f0ecee2, type: 2}
-  - {fileID: 11400000, guid: bed3f571badd4104db7541567f0ecee2, type: 2}
+  PossibleStates: []
   Dialogues:
-  - {fileID: 4900000, guid: 4a829f4415dc8744b8df38f4f857eada, type: 3}
+  - {fileID: 4900000, guid: 1f55d5675cd528f4e83842de91449f15, type: 3}

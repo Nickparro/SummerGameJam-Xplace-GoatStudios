@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "State", menuName = "Scriptable Objects/State")]
 public class State : ScriptableObject
 {
-    public string Name;
+    public string Name => name;
     public State[] PossibleStates;
 
     public TextAsset[] Dialogues;
