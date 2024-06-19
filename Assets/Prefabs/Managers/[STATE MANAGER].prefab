@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5566365646144474935}
   - component: {fileID: 6178650464623679093}
+  - component: {fileID: 8460296883365684167}
   m_Layer: 0
   m_Name: '[STATE MANAGER]'
   m_TagString: Untagged
@@ -46,3 +47,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _initialState: {fileID: 11400000, guid: 86e6edb97a75c264db00f523fa2efd05, type: 2}
   _onStateChanged: {fileID: 11400000, guid: e6f936a3f7dca66458a222c8385dde63, type: 2}
+--- !u!114 &8460296883365684167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4398757525362922341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bef99d0247d1bc940bb83e90d3eab960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: ec5f05cb6ec67f442b81cf2074e5f33d, type: 2}
+  _valueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _triggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6178650464623679093}
+        m_TargetAssemblyTypeName: StateManager, Assembly-CSharp
+        m_MethodName: ResetStates
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
