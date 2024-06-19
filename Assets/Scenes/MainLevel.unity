@@ -4009,6 +4009,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5130034107380546582, guid: 9dbc3bf06d3e9fc46ad60cc59d10acf3, type: 3}
   m_PrefabInstance: {fileID: 1541508839}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1541508841 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6464653258585529445, guid: 9dbc3bf06d3e9fc46ad60cc59d10acf3, type: 3}
+  m_PrefabInstance: {fileID: 1541508839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1541508842 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1775367806753264558, guid: 9dbc3bf06d3e9fc46ad60cc59d10acf3, type: 3}
+  m_PrefabInstance: {fileID: 1541508839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1565876929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9306,6 +9316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 676494750594274873}
+  - component: {fileID: 6770048751485089198}
   m_Layer: 0
   m_Name: Camarero (1)
   m_TagString: Untagged
@@ -9313,6 +9324,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6770048751485089198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770048751485089196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332caa6144b225f4f9711f139d2fdcba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1541508842}
+  playerAnimator: {fileID: 1541508841}
+  npcAnimator: {fileID: 7491305707341457623}
 --- !u!1 &6803333771482682402
 GameObject:
   m_ObjectHideFlags: 0
@@ -11661,6 +11687,11 @@ PrefabInstance:
 --- !u!4 &7491305707341457622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 08a86e03591ea304e83305245bf47fc4, type: 3}
+  m_PrefabInstance: {fileID: 7491305707341457621}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7491305707341457623 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 08a86e03591ea304e83305245bf47fc4, type: 3}
   m_PrefabInstance: {fileID: 7491305707341457621}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7667690770857858853
