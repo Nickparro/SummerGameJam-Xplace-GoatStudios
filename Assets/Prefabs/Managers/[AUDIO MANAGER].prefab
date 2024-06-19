@@ -73,6 +73,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: SFX_UIClick
+    clip: {fileID: 8300000, guid: 3700eb07d13dd6b489c50f7be22c455e, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!114 &1856109077560351160
 MonoBehaviour:
   m_ObjectHideFlags: 0

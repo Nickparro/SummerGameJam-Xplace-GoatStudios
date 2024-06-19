@@ -5524,26 +5524,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[AUDIO MANAGER]'
       objectReference: {fileID: 0}
-    - target: {fileID: 5952840097997175025, guid: d8b26f2261536ea4a9006eb649554a3b, type: 3}
-      propertyPath: sounds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5952840097997175025, guid: d8b26f2261536ea4a9006eb649554a3b, type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3700eb07d13dd6b489c50f7be22c455e, type: 3}
-    - target: {fileID: 5952840097997175025, guid: d8b26f2261536ea4a9006eb649554a3b, type: 3}
-      propertyPath: sounds.Array.data[4].name
-      value: SFX_UIClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 5952840097997175025, guid: d8b26f2261536ea4a9006eb649554a3b, type: 3}
-      propertyPath: sounds.Array.data[4].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5952840097997175025, guid: d8b26f2261536ea4a9006eb649554a3b, type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
