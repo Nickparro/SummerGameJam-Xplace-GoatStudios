@@ -348,7 +348,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 718210968788060850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2e6581f0319dfae478116138884ccf94, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[System.String, mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_UIClick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2107968589205163866
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +962,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1121753864163555000}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2e6581f0319dfae478116138884ccf94, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[System.String, mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_UIClick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3520092744879087524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1184,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8572593239348830062}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2e6581f0319dfae478116138884ccf94, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[System.String, mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_UIClick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4689239991130492460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,7 +1744,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6443041573745121693}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2e6581f0319dfae478116138884ccf94, type: 2}
+        m_TargetAssemblyTypeName: GameEvent`1[[System.String, mscorlib
+        m_MethodName: Invoke
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: SFX_UIClick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5202744387756117043
 GameObject:
   m_ObjectHideFlags: 0
