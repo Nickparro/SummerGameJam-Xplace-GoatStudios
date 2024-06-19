@@ -1,7 +1,5 @@
 EXTERNAL ChangeState(stateName)
 
-~ChangeState("Kitchen Lady")
-
 You look like you've been through hell.#speaker:Maria #portrait:Maria
 Sometimes talking helps, you know.
 

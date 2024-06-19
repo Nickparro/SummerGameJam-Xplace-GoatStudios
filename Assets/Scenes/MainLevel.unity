@@ -1534,6 +1534,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f8b6bac11fd4c4483b06c74ea69177, type: 3}
+--- !u!1 &670821526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ec849df7485f0945b3e190df643d529, type: 3}
+  m_PrefabInstance: {fileID: 3862324392384138407}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &689445281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1604,11 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   _requiredState: {fileID: 11400000, guid: 91321c038631cb24ca03a03267a0877b, type: 2}
+--- !u!1 &755507400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b3c3ed7c5a1b8e44bb03cb8bc54b876, type: 3}
+  m_PrefabInstance: {fileID: 6948105135118559062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &762553108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,6 +2446,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 172540536}
     m_Modifications:
+    - target: {fileID: 1110897506088691412, guid: 64cd90c66e20c2f44a4993ba24917536, type: 3}
+      propertyPath: m_ScreenY
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2867437118333019605, guid: 64cd90c66e20c2f44a4993ba24917536, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.75
@@ -7253,7 +7267,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 2.1611018, y: 1.9080257, z: 1.9632089}
   m_Center: {x: -0.044716597, y: 0.9064269, z: -0.08287394}
@@ -7756,6 +7770,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3ec849df7485f0945b3e190df643d529, type: 3}
       propertyPath: m_Name
       value: Chef
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3ec849df7485f0945b3e190df643d529, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1330755669629619180, guid: 3ec849df7485f0945b3e190df643d529, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9160,6 +9178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4444799405206005211}
+  - component: {fileID: 4944788299194750683}
   m_Layer: 0
   m_Name: Woman
   m_TagString: Untagged
@@ -9167,6 +9186,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4944788299194750683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4944788299194750682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defce84579c53c1448a8acebb6eba41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: e6f936a3f7dca66458a222c8385dde63, type: 2}
+  _valueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _triggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 755507400}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6765173270597048900}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _requiredState: {fileID: 11400000, guid: af1ddb4bc8bdf4944b078dc2c9cc8984, type: 2}
 --- !u!4 &4975695415170429594
 Transform:
   m_ObjectHideFlags: 0
@@ -9384,7 +9447,7 @@ Transform:
   m_GameObject: {fileID: 6803333771482682402}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15367138, y: 5.3903003, z: 1.949213}
+  m_LocalPosition: {x: -0.15367126, y: 5.3903003, z: 1.949213}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -9476,7 +9539,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 2}
   m_Center: {x: 0, y: 0.9, z: 0}
@@ -9554,6 +9617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6313482714894896565}
+  - component: {fileID: 6803333771482682403}
   m_Layer: 0
   m_Name: Chef
   m_TagString: Untagged
@@ -9561,6 +9625,50 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6803333771482682403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6803333771482682402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defce84579c53c1448a8acebb6eba41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: e6f936a3f7dca66458a222c8385dde63, type: 2}
+  _valueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _triggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 670821526}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3529020404047290758}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  _requiredState: {fileID: 11400000, guid: 5052bbc876607f64b85fe04878bb31a1, type: 2}
 --- !u!1001 &6948105135118559062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10360,6 +10468,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1b3c3ed7c5a1b8e44bb03cb8bc54b876, type: 3}
       propertyPath: m_Name
       value: Woman
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1b3c3ed7c5a1b8e44bb03cb8bc54b876, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1092408308860062549, guid: 1b3c3ed7c5a1b8e44bb03cb8bc54b876, type: 3}
       propertyPath: m_LocalPosition.x
