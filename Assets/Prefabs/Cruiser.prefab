@@ -3804,6 +3804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 6925964356686918635}
+  _playAudioEvent: {fileID: 11400000, guid: 2e6581f0319dfae478116138884ccf94, type: 2}
 --- !u!114 &6912920555209629833
 MonoBehaviour:
   m_ObjectHideFlags: 0
