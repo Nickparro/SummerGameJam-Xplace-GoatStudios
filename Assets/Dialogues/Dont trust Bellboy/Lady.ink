@@ -9,7 +9,7 @@ Is everything alright?
         My son... he was just murdered in our room. I don't know what to do.#speaker:Dannte #portrait:Dannte
         That's terrible.#speaker:Lady #portrait:Lady
         I did hear some strange noises earlier...
-        And I saw a suspicious man heading down to the lower deck, towards the boiler room.
+        And I saw a suspicious man heading down to the lower deck, towards the boiler room. #objective:Go to the boilers in the lower floor.
         You did? #speaker:Dannte #portrait:Dannte
         Can you describe him?
         Yes, he was tall, with a lean build.#speaker:Lady #portrait:Lady

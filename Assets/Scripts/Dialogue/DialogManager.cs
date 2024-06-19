@@ -11,6 +11,7 @@ public class DialogManager : MonoBehaviour
     [Header("Parameters")]
     [SerializeField] private TextAsset _defaultDialog;
     [SerializeField] private float _typingSpeed = 0.05f;
+    [SerializeField] private StringEvent _onObjectiveChanged;
 
     [Header("Dialog UI")]
     [SerializeField] private GameObject _dialogPanel;
@@ -42,6 +43,7 @@ public class DialogManager : MonoBehaviour
     //Tag management
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
+    private const string OBJECTIVE_TAG = "objective";
 
     //External functions
     private InkExternalFunctions _externalFunctions;
@@ -185,6 +187,9 @@ public class DialogManager : MonoBehaviour
                     break;
                 case PORTRAIT_TAG:
                     _portraitAnimator.Play(tagValue);
+                    break;
+                case OBJECTIVE_TAG:
+                    _onObjectiveChanged.Invoke(tagValue);
                     break;
             }
         }

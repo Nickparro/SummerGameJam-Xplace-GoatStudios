@@ -13526,6 +13526,7 @@ GameObject:
   - component: {fileID: 2866936273510163221}
   - component: {fileID: 8609903967116907744}
   - component: {fileID: 1217789526632897701}
+  - component: {fileID: 4987488743802494092}
   m_Layer: 0
   m_Name: BellboyAndCaptainCaptureDannte
   m_TagString: Untagged
@@ -13650,6 +13651,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: bcb140aebfeeb224f9bf6794420e91ba, type: 2}
+    - {fileID: 11400000, guid: d95fcc12fca571a49b6232868c4aeaa7, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -13657,6 +13659,32 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Int32, mscorlib
           m_MethodName: Invoke
           m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4987488743802494092}
+          m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4987488743802494092}
+          m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13710,6 +13738,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _event: {fileID: 11400000, guid: ec5f05cb6ec67f442b81cf2074e5f33d, type: 2}
+--- !u!114 &4987488743802494092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637411313306763264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3106a8b3d58abfa49b6e901d8ec7057f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: ff866834d49d5234fbfdf9edcbb19d4d, type: 2}
 --- !u!1 &2653955209407760690
 GameObject:
   m_ObjectHideFlags: 0
@@ -23903,6 +23944,7 @@ GameObject:
   - component: {fileID: 412092647673023492}
   - component: {fileID: 6652601777614025220}
   - component: {fileID: 3797944947929399812}
+  - component: {fileID: 8567242036206460128}
   m_Layer: 0
   m_Name: CinematicIntro
   m_TagString: Untagged
@@ -23989,6 +24031,8 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 82e85e54d67eb48439588f7527235995, type: 2}
+    - {fileID: 11400000, guid: d95fcc12fca571a49b6232868c4aeaa7, type: 2}
+    - {fileID: 11400000, guid: bcb140aebfeeb224f9bf6794420e91ba, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -24004,6 +24048,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8567242036206460128}
+          m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8567242036206460128}
+          m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &3797944947929399812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24017,6 +24089,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _requiredState: {fileID: 0}
+--- !u!114 &8567242036206460128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4803216825982268212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3106a8b3d58abfa49b6e901d8ec7057f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: ff866834d49d5234fbfdf9edcbb19d4d, type: 2}
 --- !u!1 &4823013509602960431
 GameObject:
   m_ObjectHideFlags: 0
@@ -44182,6 +44267,7 @@ GameObject:
   - component: {fileID: 3090691344958646242}
   - component: {fileID: 6082824182053211858}
   - component: {fileID: 5630333897514075861}
+  - component: {fileID: 8037341029141793827}
   m_Layer: 0
   m_Name: DannteFindsHisSon
   m_TagString: Untagged
@@ -44285,6 +44371,8 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 82e85e54d67eb48439588f7527235995, type: 2}
+    - {fileID: 11400000, guid: d95fcc12fca571a49b6232868c4aeaa7, type: 2}
+    - {fileID: 11400000, guid: bcb140aebfeeb224f9bf6794420e91ba, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -44312,6 +44400,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8037341029141793827}
+          m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8037341029141793827}
+          m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &6082824182053211858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44338,6 +44454,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _requiredState: {fileID: 11400000, guid: bed3f571badd4104db7541567f0ecee2, type: 2}
+--- !u!114 &8037341029141793827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8561901542901127479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3106a8b3d58abfa49b6e901d8ec7057f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _event: {fileID: 11400000, guid: ff866834d49d5234fbfdf9edcbb19d4d, type: 2}
 --- !u!1 &8568108278906871885
 GameObject:
   m_ObjectHideFlags: 0
