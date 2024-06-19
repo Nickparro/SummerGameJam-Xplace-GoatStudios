@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 3103214450829481228}
+  _playAudioEvent: {fileID: 11400000, guid: 2e6581f0319dfae478116138884ccf94, type: 2}
 --- !u!1 &8430325524543372481
 GameObject:
   m_ObjectHideFlags: 0
