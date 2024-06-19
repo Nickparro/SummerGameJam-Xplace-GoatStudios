@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 {
     //Intro
     public GameObject mainCamera;
-    public CanvasGroup startMenuText, pressAnyButtonText, mainMenuText, blackFade;
+    public CanvasGroup startMenuText, pressAnyButtonText, mainMenuText, optionPanel, blackFade;
     bool MainMenuScene(string sceneLoaded)
     {
         return SceneManager.GetActiveScene().name == sceneLoaded;
@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
             pressAnyButtonText.alpha = 0;
             mainMenuText.alpha = 0;
             blackFade.alpha = 0;
+            optionPanel.alpha = 0;
         }
             
     }
@@ -31,7 +32,7 @@ public class UIManager : MonoBehaviour
     private void Update() {
         if(Input.anyKeyDown)
         {
-            AnyButtonToStartPressed();
+            StartCoroutine(PressAnyButtonCorroutine());
         }
     }
     public void MainMenuIntro_Cinematic()
@@ -51,6 +52,21 @@ public class UIManager : MonoBehaviour
         sequence.InsertCallback(1.5f, () => SceneManager.LoadScene("MainLevel"));
     }
 
+    public void OptionsPanel()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Insert(0f, mainMenuText.DOFade(0f, 1f));
+        sequence.Insert(0.5f, optionPanel.DOFade(1f, 1f));
+
+    }
+
+    public void BackToMenu()
+    {
+        var sequence = DOTween.Sequence();
+        sequence.Insert(0f, mainMenuText.DOFade(1f, 1f));
+        sequence.Insert(0.5f, optionPanel.DOFade(0f, 1f));
+    }
+
      public void QuitGame()
     {
         Application.Quit();
@@ -60,5 +76,13 @@ public class UIManager : MonoBehaviour
         var sequence = DOTween.Sequence();
         sequence.Insert(0f, startMenuText.DOFade(0f, 1f));
         sequence.Insert(1f, mainMenuText.DOFade(1f, 1f));
+        sequence.InsertCallback(1f, () => startMenuText.gameObject.SetActive(false));
+
+    }
+
+    IEnumerator PressAnyButtonCorroutine()
+    {
+        yield return new WaitForSeconds(7);
+        AnyButtonToStartPressed();
     }
 }
