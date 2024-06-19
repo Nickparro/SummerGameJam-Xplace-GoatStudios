@@ -112,6 +112,26 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1080
       objectReference: {fileID: 0}
+    - target: {fileID: 1845241685854010152, guid: 91b2495ce51b09b489cd33690245ae7c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845241685854010152, guid: 91b2495ce51b09b489cd33690245ae7c, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845241685854010152, guid: 91b2495ce51b09b489cd33690245ae7c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845241685854010152, guid: 91b2495ce51b09b489cd33690245ae7c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845241685854010152, guid: 91b2495ce51b09b489cd33690245ae7c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2472320351611659593, guid: 91b2495ce51b09b489cd33690245ae7c, type: 3}
       propertyPath: m_Name
       value: CanvasShipSide

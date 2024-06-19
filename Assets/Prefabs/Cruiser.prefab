@@ -6129,7 +6129,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   _requiredState: {fileID: 11400000, guid: af1ddb4bc8bdf4944b078dc2c9cc8984, type: 2}
-  _newState: {fileID: 11400000, guid: 633be2b54c9072040b1320dbae7415ca, type: 2}
+  _newState: {fileID: 11400000, guid: 5052bbc876607f64b85fe04878bb31a1, type: 2}
 --- !u!114 &4778406056737597626
 MonoBehaviour:
   m_ObjectHideFlags: 0

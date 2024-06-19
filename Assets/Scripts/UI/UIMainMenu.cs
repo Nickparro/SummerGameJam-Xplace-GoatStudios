@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class UIMainMenu : MonoBehaviour
@@ -23,5 +24,14 @@ public class UIMainMenu : MonoBehaviour
             _mainMenu.SetCanvasGroup(true);
             _startMenu.SetCanvasGroup(false);
         }
+    }
+
+    public void QuitGame()
+    {
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
