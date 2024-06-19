@@ -24,7 +24,12 @@ public class NpcFollower : MonoBehaviour
         transform.rotation = player.rotation;
     }
     public void StartFollowing() => isFollowing = true;
-    public void StopFollowing() => isFollowing = false;
+    public void StopFollowing()
+    {
+        isFollowing = false;
+        transform.parent = null;
+    }
+
     private void MirrorAnimation()
     {
         npcAnimator.SetFloat("Velocity", playerAnimator.GetFloat("Velocity"));
