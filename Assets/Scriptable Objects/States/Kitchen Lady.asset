@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Kitchen Lady
   m_EditorClassIdentifier: 
   PossibleStates: []
-  Dialogues: []
+  Dialogues:
+  - {fileID: 4900000, guid: bbb9c8b9cba50c44c95c3072495467d3, type: 3}

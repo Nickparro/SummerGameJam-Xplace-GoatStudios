@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PossibleStates:
   - {fileID: 11400000, guid: ad9c97fb7bc85d54292d01749d7df330, type: 2}
+  - {fileID: 11400000, guid: af1ddb4bc8bdf4944b078dc2c9cc8984, type: 2}
   Dialogues:
   - {fileID: 4900000, guid: 1f55d5675cd528f4e83842de91449f15, type: 3}
