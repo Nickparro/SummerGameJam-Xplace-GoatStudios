@@ -32,4 +32,6 @@ public class StateManager : MonoBehaviour
         }
         else Debug.LogError("State " + newState + " not found!");
     }
+
+    public void ResetStates() => _currentState = _initialState;
 }
