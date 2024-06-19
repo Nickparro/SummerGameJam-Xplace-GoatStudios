@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class GameEventInvoker : MonoBehaviour
+public class GameEventInvoker<T> : MonoBehaviour
 {
-    
+    [SerializeField] private GameEvent<T> _event;
+    public void Invoke(T value) => _event.Invoke(value);
 }

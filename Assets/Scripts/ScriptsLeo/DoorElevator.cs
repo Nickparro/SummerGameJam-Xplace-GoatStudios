@@ -5,10 +5,7 @@ using UnityEngine;
 public class DoorElevator : MonoBehaviour , IInteractable 
 {
     [SerializeField] private Animator doorElevatorAnimator;
-    [SerializeField] private GameObject visualCue;
     private bool isOpen;
-    public GameObject VisualCue => visualCue;
-
     public void Interact()
     {
         isOpen = !isOpen;

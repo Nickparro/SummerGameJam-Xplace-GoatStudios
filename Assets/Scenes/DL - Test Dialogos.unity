@@ -188,7 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 108f118a376ace64fb54b622f9da1874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _visualCue: {fileID: 466495475}
   _entity: {fileID: 11400000, guid: e66545ea05393004ba7c001ac82d04f2, type: 2}
 --- !u!1 &247816609
 GameObject:

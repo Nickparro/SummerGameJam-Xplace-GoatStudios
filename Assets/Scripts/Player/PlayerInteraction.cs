@@ -7,6 +7,8 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Vector3 _interactSize;
     [SerializeField] private LayerMask _interactableLayer;
 
+    [SerializeField] private GameObject _visualCue;
+
     private IInteractable _currentInteractable;
 
     private void Awake()
@@ -23,12 +25,12 @@ public class PlayerInteraction : MonoBehaviour
             if (_currentInteractable == null)
             {
                 currentObject.TryGetComponent(out _currentInteractable);
-                _currentInteractable?.VisualCueVisibility(true);
+                _visualCue.SetActive(true);
             }
         }
         else
         {
-            _currentInteractable?.VisualCueVisibility(false);
+            _visualCue.SetActive(false);
             _currentInteractable = null;
         }
             
@@ -38,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
     private void Interact()
     {
         _currentInteractable?.Interact();
-        _currentInteractable?.VisualCueVisibility(false);
+        _visualCue.SetActive(false);
     }
 
     private void OnDrawGizmos()
