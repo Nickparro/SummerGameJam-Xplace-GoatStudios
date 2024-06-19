@@ -15,5 +15,6 @@ MonoBehaviour:
   PossibleStates:
   - {fileID: 11400000, guid: e85616c5685c86d43a04fca229aad4d4, type: 2}
   - {fileID: 11400000, guid: 5052bbc876607f64b85fe04878bb31a1, type: 2}
+  - {fileID: 11400000, guid: 633be2b54c9072040b1320dbae7415ca, type: 2}
   Dialogues:
   - {fileID: 4900000, guid: accd75ad19557fe409ddf122b3bfbdc2, type: 3}

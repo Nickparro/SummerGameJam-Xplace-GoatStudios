@@ -6,8 +6,10 @@ Sometimes talking helps, you know.
 My son... My only son, Elias.#speaker:Dannte #portrait:Dannte
 He was murdered tonight, and I don't know where to start looking for his killer.
 
-If it helps, I saw a man earlier, acting suspiciously near the lifeboats.
-He was tall and lean, trying to stay out of sight. #objective:Go to the lifeboats on the first floor
+If it helps, I saw a man earlier, acting suspiciously near the lifeboats.#speaker:Maria #portrait:Maria
+He was tall and lean, trying to stay out of sight. #objective:Go to the lifeboats on the deck.
+
+~ChangeState("Suspect Escapes")
 
 This is it.#speaker:Dannte #portrait:Dannte
 This is the lead I needed.

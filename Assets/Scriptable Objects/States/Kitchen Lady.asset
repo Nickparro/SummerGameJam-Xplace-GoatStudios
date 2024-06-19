@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0133ace694fd840a3e2b80880cb613, type: 3}
   m_Name: Kitchen Lady
   m_EditorClassIdentifier: 
-  PossibleStates: []
+  PossibleStates:
+  - {fileID: 11400000, guid: 3047ec6979e97cc4bb8fed106c9d39a7, type: 2}
   Dialogues:
   - {fileID: 4900000, guid: bbb9c8b9cba50c44c95c3072495467d3, type: 3}
