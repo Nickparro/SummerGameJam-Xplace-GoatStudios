@@ -33,6 +33,7 @@ public class DialogManager : MonoBehaviour
     private Story _currentStory;
     private bool _dialogIsPlaying;
     private bool _canContinueToNextLine;
+    private bool _hasBindings;
     
     private Coroutine _displayLineCoroutine;
 
@@ -76,7 +77,7 @@ public class DialogManager : MonoBehaviour
 
         _playerInputs = new();
         _submitAction = _playerInputs.UI.Submit;
-        _submitAction.performed += (x => _pressedInput = true);
+        _submitAction.canceled += (x => _pressedInput = true);
         _playerInputs.Enable();
     }
 
@@ -105,12 +106,14 @@ public class DialogManager : MonoBehaviour
         _dialogPanel.SetActive(true);
 
         _externalFunctions.Bind(_currentStory);
+        _hasBindings = true;
 
         ContinueStory();
     }
 
-    private void ContinueStory()
+    public void ContinueStory()
     {
+        if(_currentStory == null) return;
         if (_currentStory.canContinue == true)
         {
             //Set dialog text
@@ -160,7 +163,11 @@ public class DialogManager : MonoBehaviour
 
     private void ExitDialogMode()
     {
-        _externalFunctions.Unbind(_currentStory);
+        if(_hasBindings == true)
+        {
+            _externalFunctions.Unbind(_currentStory);
+            _hasBindings = false;
+        }
 
         _dialogIsPlaying = false;
         _dialogPanel.SetActive(false);

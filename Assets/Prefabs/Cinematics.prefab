@@ -9586,6 +9586,7 @@ GameObject:
   - component: {fileID: 4071087676495023505}
   - component: {fileID: 1941649056077910483}
   - component: {fileID: 5925957932776941916}
+  - component: {fileID: 8624986344678412022}
   m_Layer: 0
   m_Name: DannteKillHisSon
   m_TagString: Untagged
@@ -9731,6 +9732,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+          m_TargetAssemblyTypeName: GameEvent`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1941649056077910483}
@@ -9783,6 +9796,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _event: {fileID: 11400000, guid: ec5f05cb6ec67f442b81cf2074e5f33d, type: 2}
+--- !u!114 &8624986344678412022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493888200355705574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: defce84579c53c1448a8acebb6eba41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: e6f936a3f7dca66458a222c8385dde63, type: 2}
+  _valueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _triggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 392575451031877952}
+        m_TargetAssemblyTypeName: UnityEngine.Playables.PlayableDirector, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _requiredStates:
+  - {fileID: 11400000, guid: b087b124eae5ca34b8ba9f17279c5f40, type: 2}
 --- !u!1 &1500537842792184067
 GameObject:
   m_ObjectHideFlags: 0
@@ -12524,6 +12570,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+          m_TargetAssemblyTypeName: GameEvent`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5021968613462764605}
@@ -14848,6 +14906,18 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 3232705830483109500}
           m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+          m_TargetAssemblyTypeName: GameEvent`1[[System.Boolean, mscorlib
           m_MethodName: Invoke
           m_Mode: 6
           m_Arguments:
@@ -19461,6 +19531,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+          m_TargetAssemblyTypeName: GameEvent`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &8609903967116907744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19492,7 +19574,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _requiredState: {fileID: 11400000, guid: e2de192c3beeae649b7f0721fc478c50, type: 2}
+  _requiredStates:
+  - {fileID: 11400000, guid: e2de192c3beeae649b7f0721fc478c50, type: 2}
 --- !u!114 &1217789526632897701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23713,6 +23796,7 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 82e85e54d67eb48439588f7527235995, type: 2}
+    - {fileID: 11400000, guid: d95fcc12fca571a49b6232868c4aeaa7, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -23735,6 +23819,20 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 4900000, guid: 1f55d5675cd528f4e83842de91449f15, type: 3}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+          m_TargetAssemblyTypeName: GameEvent`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -24746,6 +24844,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+          m_TargetAssemblyTypeName: GameEvent`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 5467895677134046512}
@@ -24804,7 +24914,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _requiredState: {fileID: 11400000, guid: ad9c97fb7bc85d54292d01749d7df330, type: 2}
+  _requiredStates:
+  - {fileID: 11400000, guid: ad9c97fb7bc85d54292d01749d7df330, type: 2}
 --- !u!114 &5467895677134046512
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36214,6 +36325,18 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8567242036206460128}
           m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+          m_TargetAssemblyTypeName: GameEvent`1[[System.Boolean, mscorlib
           m_MethodName: Invoke
           m_Mode: 6
           m_Arguments:
@@ -64524,6 +64647,18 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 8037341029141793827}
           m_TargetAssemblyTypeName: GameEventInvoker`1[[System.Boolean, mscorlib
+          m_MethodName: Invoke
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+          m_TargetAssemblyTypeName: GameEvent`1[[System.Boolean, mscorlib
           m_MethodName: Invoke
           m_Mode: 6
           m_Arguments:

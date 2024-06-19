@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e0133ace694fd840a3e2b80880cb613, type: 3}
-  m_Name: Trust Lady
+  m_Name: Dannte kills Son
   m_EditorClassIdentifier: 
-  PossibleStates:
-  - {fileID: 11400000, guid: b087b124eae5ca34b8ba9f17279c5f40, type: 2}
-  Dialogues:
-  - {fileID: 4900000, guid: b99860c2d75d048458e2609c6120a919, type: 3}
+  PossibleStates: []
+  Dialogues: []

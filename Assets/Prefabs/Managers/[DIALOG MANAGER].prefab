@@ -1178,6 +1178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1051355632480133450}
   - component: {fileID: 5088631482459596935}
+  - component: {fileID: 2534770947612323307}
   m_Layer: 0
   m_Name: '[DIALOG MANAGER]'
   m_TagString: Untagged
@@ -1225,6 +1226,37 @@ MonoBehaviour:
   - {fileID: 1795977854087431192}
   - {fileID: 4634610979641197497}
   - {fileID: 7019224697312004180}
+--- !u!114 &2534770947612323307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873039528297913391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5780823f8b6e0c04bbc1e1d5d3d4865c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 79d80ec2d4c33cc4588fb3a063715550, type: 2}
+  _valueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _triggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5088631482459596935}
+        m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+        m_MethodName: ContinueStory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5969212434899863466
 GameObject:
   m_ObjectHideFlags: 0

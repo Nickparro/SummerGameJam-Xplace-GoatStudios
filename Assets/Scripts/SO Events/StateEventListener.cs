@@ -2,11 +2,18 @@
 
 public class StateEventListener : GameEventListener<State>
 {
-    [SerializeField] private State _requiredState;
+    [SerializeField] private State[] _requiredStates;
 
     public override void Rise(State value)
     {
-        if(value == _requiredState)
-            base.Rise(value);
+        foreach (State state in _requiredStates)
+        {
+            if (value == state)
+            {
+                base.Rise(value);
+                break;
+            }
+        }
+            
     }
 }
