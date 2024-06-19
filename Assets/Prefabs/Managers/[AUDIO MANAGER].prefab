@@ -79,6 +79,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: SFX_Door
+    clip: {fileID: 8300000, guid: 71558809f618b7444a69406c626e6b02, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!114 &1856109077560351160
 MonoBehaviour:
   m_ObjectHideFlags: 0
