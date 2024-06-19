@@ -25,15 +25,13 @@ public class UIManager : MonoBehaviour
             mainMenuText.alpha = 0;
             blackFade.alpha = 0;
             optionPanel.alpha = 0;
+            StartCoroutine(PressAnyButtonCorroutine());
         }
             
     }
 
     private void Update() {
-        if(Input.anyKeyDown)
-        {
-            StartCoroutine(PressAnyButtonCorroutine());
-        }
+       
     }
     public void MainMenuIntro_Cinematic()
     {
@@ -83,6 +81,9 @@ public class UIManager : MonoBehaviour
     IEnumerator PressAnyButtonCorroutine()
     {
         yield return new WaitForSeconds(7);
-        AnyButtonToStartPressed();
+         if(Input.anyKeyDown)
+        {
+            AnyButtonToStartPressed();
+        }
     }
 }
