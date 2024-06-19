@@ -5,8 +5,8 @@ This can't be happening. Not my boy. Please, wake up...
 Elias, please... Please wake up...
 Who could have done this? Why my son? I have to do something!
     *[Wait for help]
-        ~ChangeState("Trust Bellboy")
         I must wait for the captain to solve this.
+        ~ChangeState("Trust Bellboy")
         ->DONE
     *[Investigate]
         ~ChangeState("Dont trust Bellboy")

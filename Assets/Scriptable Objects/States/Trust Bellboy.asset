@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0133ace694fd840a3e2b80880cb613, type: 3}
   m_Name: Trust Bellboy
   m_EditorClassIdentifier: 
-  PossibleStates: []
+  PossibleStates:
+  - {fileID: 11400000, guid: e2de192c3beeae649b7f0721fc478c50, type: 2}
   Dialogues:
   - {fileID: 4900000, guid: d7809bffdffdd3e4797120d6c8e78b46, type: 3}
