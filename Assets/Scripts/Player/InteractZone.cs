@@ -12,8 +12,6 @@ public class InteractZone : MonoBehaviour, IInteractable
 
     private PlayerController _playerController;
 
-    public GameObject VisualCue => _visualCue;
-
     private void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
